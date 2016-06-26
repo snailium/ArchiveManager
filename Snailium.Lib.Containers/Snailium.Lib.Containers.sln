@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snailium.Lib.Containers", "Snailium.Lib.Containers\Snailium.Lib.Containers.csproj", "{AEAD31FF-EF65-45D8-A512-4A60739DEFC3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://remote.snailium.com:2222/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Snailium.Lib.Containers\\Snailium.Lib.Containers.csproj
+		SccProjectName1 = Snailium.Lib.Containers
+		SccLocalPath1 = Snailium.Lib.Containers
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEAD31FF-EF65-45D8-A512-4A60739DEFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAD31FF-EF65-45D8-A512-4A60739DEFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAD31FF-EF65-45D8-A512-4A60739DEFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAD31FF-EF65-45D8-A512-4A60739DEFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
