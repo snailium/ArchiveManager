@@ -68,7 +68,14 @@ namespace ArchiveManager
 
             // Popup Open File dialog
             openFileDialog.Title = "Open Archive File";
-            openFileDialog.Filter = "Union File (*.uni)|*.uni|CWAB Animation Package (*.cwab)|*.cwab|MAAB Animation Package (*.maab)|*.maab|Pak File (*.pak)|*.pak|CPack File(*.cpk)|*.cpk|Sega AFS (*.afs)|*.afs|All Files|*.*";
+            openFileDialog.Filter = "Union File (*.uni)|*.uni|" + 
+                                    "CWAB Animation Package (*.cwab)|*.cwab|" +
+                                    "MAAB Animation Package (*.maab)|*.maab|" +
+                                    "Pak File (*.pak)|*.pak|" +
+                                    "CPack File (*.cpk)|*.cpk|" +
+                                    "LNK4 File (*.lnk4)|*.lnk4|" +
+                                    "Sega AFS (*.afs)|*.afs|" +
+                                    "All Files|*.*";
             openFileDialog.Multiselect = false;
             DialogResult FileResult = openFileDialog.ShowDialog();
 
@@ -95,24 +102,37 @@ namespace ArchiveManager
                         string fileType = StreamUtility.GetFileExtension(identifier);
 
                         // Initiate parser based on file type
-                        if (fileType.Equals("uni"))        // Union 2 Archive
-                            archive = new Uni2Container(archiveFile);
-                        else if (fileType.Equals("cwab"))  // CWAB Animation Package
-                            archive = new CwabContainer(archiveFile);
-                        else if (fileType.Equals("maab"))  // MAAB Animation Package
-                            archive = new MaabContainer(archiveFile);
-                        else if (fileType.Equals("axcs"))  // AXCS Archive container
-                            archive = new AxcsContainer(archiveFile);
-                        else if (fileType.Equals("cpk"))  // AXCS Archive container
-                            archive = new CriPack_Container(archiveFile);
-                        else if (fileType.Equals("lnk4"))  // AXCS Archive container
+                        switch (fileType)
+                        {
+                            case "uni":       // Union 2 Archive
+                                archive = new Uni2Container(archiveFile);
+                                break;
+                            case "cwab":      // CWAB Animation Package
+                                archive = new CwabContainer(archiveFile);
+                                break;
+                            case "maab":      // MAAB Animation Package
+                                archive = new MaabContainer(archiveFile);
+                                break;
+                            case "pak":       // Time Leap Pak Archive
+                                archive = new PakContainer(archiveFile);
+                                break;
+                            case "axcs":      // AXCS Archive container
+                                archive = new AxcsContainer(archiveFile);
+                                break;
+                            case "cpk":       // CRI Archive container
+                                archive = new CriPack_Container(archiveFile);
+                                break;
+                            case "lnk4":      // LNK4 Archive container
                             archive = new Lnk4Container(archiveFile);
-                        else if (fileType.Equals("afs"))  // AXCS Archive container
-                            archive = new AfsContainer(archiveFile);
-                        else
-                            throw new FileLoadException("Unknown file type", fileName);
+                                break;
+                            case "afs":       // AFS Archive container
+                                archive = new AfsContainer(archiveFile);
+                                break;
+                            default:
+                                throw new FileLoadException("Unknown file type", fileName);
+                        }
 
-                        archive.ParseFileTable();
+                    archive.ParseFileTable();
 
                         // Get file list
                         foreach (FileItem file in archive.FileTable)
