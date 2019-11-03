@@ -17,7 +17,7 @@ A container with identifier 0x554e4932 (ASCII: UNI2).
 
 This container support is developed to extract files for Xbox 360 game "俺の嫁 ～あなただけの花嫁～".
 
-For further information: http://www.snailium.com/archives/287/
+For further information: http://www.snailium.com/my-gaming/uni2-file-structure.html
 
 ### MAAB
 MAAB is a package of various images to conform an animated image. (Missing documentation)
@@ -38,7 +38,7 @@ Originally by Sega. A container with identifier 0x441465300 (ASCII: AFS).
 
 This container support is developed to extract files fro Xbox 360 game "Cross Channel".
 
-For further information: http://www.snailium.com/2012-08-28-xbox-360-afs-cross-channel/
+For further information: https://www.snailium.com/my-gaming/afs-container-from-cross-channel.html
 
 ### CPK (CPack or CRI-Pack)
 A container with identifier 0x43504b20 (ASCII: CPK), used by CRI middle-ware. (Missing documentation)
@@ -50,5 +50,5 @@ A container with identifier 0x4C4E4B34 (ASCII: LNK4).
 
 This container support is developed to extract files fro Xbox 360 game "Code_18".
 
-For further information: http://www.snailium.com/2012-08-28-xbox-360-lnk4-container-code-18/
+For further information: https://www.snailium.com/my-gaming/lnk4-container-code-18.html
 
